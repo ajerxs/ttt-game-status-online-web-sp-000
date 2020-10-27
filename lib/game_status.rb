@@ -18,8 +18,13 @@ WIN_COMBINATIONS = [
 board = [" "," "," "," "," "," "," "," "," "]
 
 def won?(board)
-  WIN_COMBINATIONS.find do |win_combination|
-    values = board.values_at(*win_combination)
-    values.all?('X') || values.all?('O')
+  WIN_COMBINATIONS.each do |win_combination|
+    if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X"
+      return win_combination
+    elsif board[win_combination[0]] == "O" && board[win_combination[1]] == "O" && board[win_combination[2]] == "O"
+      return win_combination
+    end
   end
+  false
 end
+      
