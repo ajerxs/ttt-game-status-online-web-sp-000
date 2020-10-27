@@ -33,3 +33,14 @@ def full?(board)
     full_board == "X" || full_board == "O"
   end
 end
+
+def draw?(board)
+  if full?(board)
+    return true
+  elsif won?(board)
+    return false
+  else
+    return false
+  end
+end
+    
