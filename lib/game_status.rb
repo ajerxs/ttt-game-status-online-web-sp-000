@@ -19,6 +19,7 @@ board = [" "," "," "," "," "," "," "," "," "]
 
 def won?(board)
   WIN_COMBINATIONS.find do |win_combination|
-    values = board.values_at(win_combination)
-    values.all?("X") || values.all?("O")
+    values = board.values_at(*win_combination)
+    values.all?('X') || values.all?('O')
+  end
 end
