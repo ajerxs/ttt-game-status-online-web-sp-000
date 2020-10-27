@@ -18,12 +18,7 @@ WIN_COMBINATIONS = [
 board = [" "," "," "," "," "," "," "," "," "]
 
 def won?(board)
-  WIN_COMBINATIONS.select do |win_combination|
-    win_index = win_combination
-    if win_index = board[win_index]
-      return win_combination
-    else
-      return false
-    end
-  end
+  WIN_COMBINATIONS.find do |win_combination|
+    values = board.values_at(win_combination)
+    values.all?("X") || values.all?("O")
 end
