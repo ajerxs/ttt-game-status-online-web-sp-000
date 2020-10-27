@@ -27,4 +27,11 @@ def won?(board)
   end
   false
 end
+
+def full?(board)
+  board.all? do |full_board|
+    if full_board == "X" || full_board == "O"
+    end
+  end
+end
       
